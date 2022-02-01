@@ -10,7 +10,7 @@ public class CalculateArea {
 
         Double area = null;
 
-        if (figure == Figure.SQUARE) {
+        if (figure == Figure.CIRCLE) {
             area = calculateCircleArea();
         } else if (figure == Figure.SQUARE) {
             area = calculateSquareArea();
