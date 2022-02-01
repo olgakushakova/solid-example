@@ -6,5 +6,6 @@ import lombok.AllArgsConstructor;
 public enum Figure {
     SQUARE,
     CIRCLE,
-    TRIANGLE
+    TRIANGLE,
+    RECTANGLE
 }

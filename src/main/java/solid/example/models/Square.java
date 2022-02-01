@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class Square {
 
-    private int a;
+    private Double sideLength;
 }

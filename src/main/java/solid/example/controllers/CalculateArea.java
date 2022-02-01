@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CalculateArea {
 
-    public double calculateArea (Figure figure) {
+    public Double calculateArea (Figure figure) {
 
         Double area = null;
 
@@ -16,6 +16,8 @@ public class CalculateArea {
             area = calculateSquareArea();
         } else if (figure == Figure.TRIANGLE) {
             area = calculateTriangleArea();
+        } else if (figure == Figure.RECTANGLE) {
+            area = calculateRectangleArea();
         }
         return area;
     }
@@ -59,7 +61,20 @@ public class CalculateArea {
         triangleArea = length * height / 2;
 
         return triangleArea;
+    }
 
+    public double calculateRectangleArea() {
 
+        Double rectangleArea;
+
+        Scanner sn = new Scanner(System.in);
+        System.out.println("Enter the length of the rectangle: ");
+        Double length = sn.nextDouble();
+        System.out.println("Enter the height of the rectangle: ");
+        Double height = sn.nextDouble();
+
+        rectangleArea = length * height;
+
+        return rectangleArea;
     }
 }
