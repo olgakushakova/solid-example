@@ -6,6 +6,9 @@ import java.util.Scanner;
 
 public class CalculateArea {
 
+    private CalculatePaintingArea calculatePaintingArea = new CalculatePaintingArea();
+    private CalculateTileArea calculateTileArea = new CalculateTileArea();
+
     public Double calculateArea(Figure figure, String areaType) {
 
         Double area = null;
@@ -18,14 +21,10 @@ public class CalculateArea {
             } else if (figure == Figure.TRIANGLE) {
                 area = calculateTriangleArea();
             }
-        } else if (areaType == "decoration") {
-            if (figure == Figure.CIRCLE) {
-                area = calculateCircleAreaForDecoration();
-            } else if (figure == Figure.SQUARE) {
-                area = calculateSquareAreaForDecoration();
-            } else if (figure == Figure.TRIANGLE) {
-                area = calculateTriangleAreaForDecoration();
-            }
+        } else if (areaType == "painting") {
+            area = calculatePaintingArea.calculatePaintingArea(figure);
+        } else if (areaType == "tile") {
+            area = calculateTileArea.calculateTileArea(figure);
         }
         return area;
     }
@@ -68,47 +67,6 @@ public class CalculateArea {
         Double height = sn.nextDouble();
 
         triangleArea = length * height / 2;
-
-        return triangleArea;
-    }
-
-    public double calculateSquareAreaForDecoration() {
-
-        Double squareArea;
-
-        Scanner sn = new Scanner(System.in);
-        System.out.println("Enter length of the square side: ");
-        Double length = sn.nextDouble();
-
-        squareArea = length * length * 1.1;
-
-        return squareArea;
-    }
-
-    public double calculateCircleAreaForDecoration() {
-
-        Double circleArea;
-
-        Scanner sn = new Scanner(System.in);
-        System.out.println("Enter radius of the circle: ");
-        Double radius = sn.nextDouble();
-
-        circleArea = Math.PI * radius * radius * 1.2;
-
-        return circleArea;
-    }
-
-    public double calculateTriangleAreaForDecoration() {
-
-        Double triangleArea;
-
-        Scanner sn = new Scanner(System.in);
-        System.out.println("Enter the length of the triangle base: ");
-        Double length = sn.nextDouble();
-        System.out.println("Enter the length of the triangle height: ");
-        Double height = sn.nextDouble();
-
-        triangleArea = length * height / 2 * 1.2;
 
         return triangleArea;
     }

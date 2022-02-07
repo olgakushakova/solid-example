@@ -32,11 +32,12 @@ public class UserInteraction {
         String areaType = null;
 
         System.out.println("What kind of calculations do you need: " +
-                "\n 1 - Simple \n 2 - Decoration");
+                "\n 1 - Simple \n 2 - Painting \n 3 - Tile");
 
         Integer areaTypeNumber = Integer.parseInt(myObj.nextLine());
         if (areaTypeNumber == 1) areaType = "simple";
-        else if (areaTypeNumber == 2) areaType = "decoration";
+        else if (areaTypeNumber == 2) areaType = "painting";
+        else if (areaTypeNumber == 3) areaType = "tile";
         System.out.println("Let's calculate " + areaType + " area of a " + figure);  // Output user input
 
         return areaType;
