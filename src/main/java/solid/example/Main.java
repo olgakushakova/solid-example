@@ -1,6 +1,8 @@
 package solid.example;
 
+import solid.example.calculations.CalculateArea;
 import solid.example.models.Figure;
+import solid.example.user.interactions.UserInteraction;
 
 
 public class Main {

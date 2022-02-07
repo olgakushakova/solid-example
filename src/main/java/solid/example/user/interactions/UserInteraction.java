@@ -1,6 +1,9 @@
-package solid.example;
+package solid.example.user.interactions;
 
+import solid.example.models.Circle;
 import solid.example.models.Figure;
+import solid.example.models.Square;
+import solid.example.models.Triangle;
 
 import java.util.Scanner;
 
@@ -41,6 +44,45 @@ public class UserInteraction {
         System.out.println("Let's calculate " + areaType + " area of a " + figure);  // Output user input
 
         return areaType;
+    }
+
+    public Square createSquareWithUserInput() {
+
+        Square square = new Square();
+
+        System.out.println("Enter length of the square side: ");
+        Double length = myObj.nextDouble();
+
+        square.setSideLength(length);
+
+        return square;
+    }
+
+    public Circle createCircleWithUserInput() {
+
+        Circle circle = new Circle();
+
+        System.out.println("Enter radius of the circle: ");
+        Double radius = myObj.nextDouble();
+
+        circle.setRadius(radius);
+
+        return circle;
+    }
+
+    public Triangle createTriangleWithUserInput() {
+
+        Triangle triangle = new Triangle();
+
+        System.out.println("Enter the length of the triangle base: ");
+        Double length = myObj.nextDouble();
+        System.out.println("Enter the length of the triangle height: ");
+        Double height = myObj.nextDouble();
+
+        triangle.setBaseLength(length);
+        triangle.setHeight(height);
+
+        return triangle;
     }
 
     public void printAreaInConsole(Figure figure, String areaType, Double area) {
