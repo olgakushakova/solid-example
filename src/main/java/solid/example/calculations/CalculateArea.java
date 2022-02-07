@@ -49,6 +49,7 @@ public class CalculateArea {
 
     public double calculateTriangleArea(Triangle triangle) {
 
-        return triangle.getBaseLength() * triangle.getHeight() / 2;
+        return triangle.getFirstSideLength() * triangle.getSecondSideLength() / 2
+                * Math.sin(triangle.getFirstAndSecondSidesAngle());
     }
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class Triangle {
 
-    private Double baseLength;
-    private Double height;
+    private Double firstSideLength;
+    private Double secondSideLength;
+    private Double firstAndSecondSidesAngle;
 }

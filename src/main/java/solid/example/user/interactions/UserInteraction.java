@@ -74,13 +74,16 @@ public class UserInteraction {
 
         Triangle triangle = new Triangle();
 
-        System.out.println("Enter the length of the triangle base: ");
-        Double length = myObj.nextDouble();
-        System.out.println("Enter the length of the triangle height: ");
-        Double height = myObj.nextDouble();
+        System.out.println("Enter the length of the one triangle side: ");
+        Double firstSideLength = myObj.nextDouble();
+        System.out.println("Enter the length of the other triangle side: ");
+        Double secondSideLength = myObj.nextDouble();
+        System.out.println("Enter the included angle: ");
+        Double angle = myObj.nextDouble();
 
-        triangle.setBaseLength(length);
-        triangle.setHeight(height);
+        triangle.setFirstSideLength(firstSideLength);
+        triangle.setSecondSideLength(secondSideLength);
+        triangle.setFirstAndSecondSidesAngle(angle);
 
         return triangle;
     }
