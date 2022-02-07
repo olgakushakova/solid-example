@@ -1,20 +1,21 @@
 package solid.example;
 
-import solid.example.controllers.*;
 import solid.example.models.Figure;
 
 
 public class Main {
 
-    private static UserInteractionController userInteractionController = new UserInteractionController();
+    private static UserInteraction userInteraction = new UserInteraction();
     private static CalculateArea calculateArea = new CalculateArea();
 
     public static void main(String[] args) {
 
-        Figure figure = userInteractionController.readFigureFromInput();
+        Figure figure = userInteraction.readFigureFromInput();
 
-        Double area = calculateArea.calculateArea(figure);
+        String areaType = userInteraction.readAreaTypeFromInput(figure);
 
-        userInteractionController.printAreaOnTheScreen(figure, area);
+        Double area = calculateArea.calculateArea(figure, areaType);
+
+        userInteraction.printAreaInConsole(figure, areaType, area);
     }
 }

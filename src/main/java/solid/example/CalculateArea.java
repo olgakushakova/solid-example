@@ -1,4 +1,4 @@
-package solid.example.controllers;
+package solid.example;
 
 import solid.example.models.Figure;
 
@@ -6,24 +6,32 @@ import java.util.Scanner;
 
 public class CalculateArea {
 
-    public Double calculateArea (Figure figure) {
+    public Double calculateArea(Figure figure, String areaType) {
 
         Double area = null;
 
-        if (figure == Figure.CIRCLE) {
-            area = calculateCircleArea();
-        } else if (figure == Figure.SQUARE) {
-            area = calculateSquareArea();
-        } else if (figure == Figure.TRIANGLE) {
-            area = calculateTriangleArea();
-        } else if (figure == Figure.RECTANGLE) {
-            area = calculateRectangleArea();
+        if (areaType == "simple") {
+            if (figure == Figure.CIRCLE) {
+                area = calculateCircleArea();
+            } else if (figure == Figure.SQUARE) {
+                area = calculateSquareArea();
+            } else if (figure == Figure.TRIANGLE) {
+                area = calculateTriangleArea();
+            }
+        } else if (areaType == "decoration") {
+            if (figure == Figure.CIRCLE) {
+                area = calculateCircleAreaForDecoration();
+            } else if (figure == Figure.SQUARE) {
+                area = calculateSquareAreaForDecoration();
+            } else if (figure == Figure.TRIANGLE) {
+                area = calculateTriangleAreaForDecoration();
+            }
         }
         return area;
     }
 
 
-    public double calculateSquareArea() {
+    public Double calculateSquareArea() {
 
         Double squareArea;
 
@@ -62,21 +70,6 @@ public class CalculateArea {
         triangleArea = length * height / 2;
 
         return triangleArea;
-    }
-
-    public double calculateRectangleArea() {
-
-        Double rectangleArea;
-
-        Scanner sn = new Scanner(System.in);
-        System.out.println("Enter the length of the rectangle: ");
-        Double length = sn.nextDouble();
-        System.out.println("Enter the height of the rectangle: ");
-        Double height = sn.nextDouble();
-
-        rectangleArea = length * height;
-
-        return rectangleArea;
     }
 
     public double calculateSquareAreaForDecoration() {
@@ -118,20 +111,5 @@ public class CalculateArea {
         triangleArea = length * height / 2 * 1.2;
 
         return triangleArea;
-    }
-
-    public double calculateRectangleAreaForDecoration() {
-
-        Double rectangleArea;
-
-        Scanner sn = new Scanner(System.in);
-        System.out.println("Enter the length of the rectangle base: ");
-        Double length = sn.nextDouble();
-        System.out.println("Enter the height of the rectangle: ");
-        Double height = sn.nextDouble();
-
-        rectangleArea = length * height * 1.1;
-
-        return rectangleArea;
     }
 }
