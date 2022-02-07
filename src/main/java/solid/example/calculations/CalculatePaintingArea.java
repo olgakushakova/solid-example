@@ -6,7 +6,7 @@ import solid.example.models.Figure;
 import solid.example.models.Square;
 import solid.example.models.Triangle;
 
-public class CalculatePaintingArea {
+public class CalculatePaintingArea extends CalculateArea {
 
     private static final Double CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING = 1.1;
     private static final Double SQUARE_COEFFICIENT_PAINTING = 1.05;
@@ -19,30 +19,14 @@ public class CalculatePaintingArea {
 
         if (figure == Figure.CIRCLE) {
             Circle circle = userInteraction.createCircleWithUserInput();
-            paintingArea = calculateCirclePaintingArea(circle);
+            paintingArea = super.calculateCircleArea(circle) * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
         } else if (figure == Figure.SQUARE) {
             Square square = userInteraction.createSquareWithUserInput();
-            paintingArea = calculateSquarePaintingArea(square);
+            paintingArea = super.calculateSquareArea(square) * SQUARE_COEFFICIENT_PAINTING;
         } else if (figure == Figure.TRIANGLE) {
             Triangle triangle = userInteraction.createTriangleWithUserInput();
-            paintingArea = calculateTrianglePaintingArea(triangle);
+            paintingArea = super.calculateTriangleArea(triangle) * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
         }
         return paintingArea;
-    }
-
-
-    public double calculateSquarePaintingArea(Square square) {
-
-        return square.getSideLength() * square.getSideLength() * SQUARE_COEFFICIENT_PAINTING;
-    }
-
-    public double calculateCirclePaintingArea(Circle circle) {
-
-        return Math.PI * circle.getRadius() * circle.getRadius() * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
-    }
-
-    public double calculateTrianglePaintingArea(Triangle triangle) {
-
-        return triangle.getBaseLength() * triangle.getHeight() / 2 * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
     }
 }

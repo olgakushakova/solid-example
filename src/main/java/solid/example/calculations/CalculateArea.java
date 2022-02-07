@@ -50,6 +50,6 @@ public class CalculateArea {
     public double calculateTriangleArea(Triangle triangle) {
 
         return triangle.getFirstSideLength() * triangle.getSecondSideLength() / 2
-                * Math.sin(triangle.getFirstAndSecondSidesAngle());
+                * Math.sin(Math.toRadians(triangle.getFirstAndSecondSidesAngle()));
     }
 }
