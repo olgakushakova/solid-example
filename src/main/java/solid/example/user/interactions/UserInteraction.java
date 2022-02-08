@@ -1,9 +1,7 @@
 package solid.example.user.interactions;
 
-import solid.example.models.Circle;
-import solid.example.models.Figure;
-import solid.example.models.Square;
-import solid.example.models.Triangle;
+import org.w3c.dom.css.Rect;
+import solid.example.models.*;
 
 import java.util.Scanner;
 
@@ -16,18 +14,13 @@ public class UserInteraction {
         Figure figure = null;
 
         System.out.println("Enter figure type from the list. Enter the number and press Enter: " +
-                "\n 1 - Square \n 2 - Circle \n 3 - Triangle");
+                "\n 1 - Square \n 2 - Circle \n 3 - Triangle \n 4 - Rectangle");
 
         Integer figureNumber = Integer.parseInt(myObj.nextLine());  // Read user input
-        if (figureNumber == 1) {
-            figure = new Square();
-        }
-        if (figureNumber == 2) {
-            figure = new Circle();
-        }
-        if (figureNumber == 3) {
-            figure = new Triangle();
-        }
+        if (figureNumber == 1) figure = new Square();
+        else if (figureNumber == 2) figure = new Circle();
+        else if (figureNumber == 3) figure = new Triangle();
+        else if (figureNumber == 4) figure = new Rectangle();
         return figure;
     }
 
@@ -53,7 +46,7 @@ public class UserInteraction {
         System.out.println("Enter length of the square side: ");
         Double length = myObj.nextDouble();
 
-        square.setSideLength(length);
+        square.setWidth(length);
 
         return square;
     }
@@ -86,6 +79,21 @@ public class UserInteraction {
         triangle.setFirstAndSecondSidesAngle(angle);
 
         return triangle;
+    }
+
+    public Rectangle createRectangleWithUserInput() {
+
+        Rectangle rectangle = new Rectangle();
+
+        System.out.println("Enter the rectangle width: ");
+        Double width = myObj.nextDouble();
+        System.out.println("Enter the rectangle height: ");
+        Double height = myObj.nextDouble();
+
+        rectangle.setWidth(width);
+        rectangle.setHeight(height);
+
+        return rectangle;
     }
 
     public void printAreaInConsole(Figure figure, String areaType, Double area) {

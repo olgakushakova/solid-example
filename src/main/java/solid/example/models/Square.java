@@ -3,12 +3,6 @@ package solid.example.models;
 import lombok.Data;
 
 @Data
-public class Square extends Figure {
+public class Square extends Rectangle {
 
-    private Double sideLength;
-
-    public Double getArea() {
-
-        return sideLength * sideLength;
-    }
 }

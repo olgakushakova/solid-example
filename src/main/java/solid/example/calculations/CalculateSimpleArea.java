@@ -1,9 +1,6 @@
 package solid.example.calculations;
 
-import solid.example.models.Circle;
-import solid.example.models.Figure;
-import solid.example.models.Square;
-import solid.example.models.Triangle;
+import solid.example.models.*;
 import solid.example.user.interactions.UserInteraction;
 
 
@@ -30,6 +27,11 @@ public class CalculateSimpleArea implements CalculateArea {
 
             Triangle triangle = userInteraction.createTriangleWithUserInput();
             area = triangle.getArea();
+
+        } else if (figure instanceof Rectangle) {
+
+            Rectangle rectangle = userInteraction.createRectangleWithUserInput();
+            area = rectangle.getArea();
         }
         return area;
     }
