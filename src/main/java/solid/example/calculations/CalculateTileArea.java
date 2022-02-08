@@ -6,27 +6,34 @@ import solid.example.models.Figure;
 import solid.example.models.Square;
 import solid.example.models.Triangle;
 
-public class CalculateTileArea extends CalculateArea {
+public class CalculateTileArea implements CalculateArea {
 
     private static final Double CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE = 1.2;
     private static final Double SQUARE_COEFFICIENT_TILE = 1.1;
 
     private static UserInteraction userInteraction = new UserInteraction();
 
-    public Double calculateTileArea(Figure figure) {
+    @Override
+    public Double calculateArea(Figure figure) {
 
-        Double paintingArea = null;
+        Double area = null;
 
-        if (figure == Figure.CIRCLE) {
-            Circle circle = userInteraction.createCircleWithUserInput();
-            paintingArea = super.calculateCircleArea(circle) * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
-        } else if (figure == Figure.SQUARE) {
+        if (figure instanceof Square) {
+
             Square square = userInteraction.createSquareWithUserInput();
-            paintingArea = super.calculateSquareArea(square) * SQUARE_COEFFICIENT_TILE;
-        } else if (figure == Figure.TRIANGLE) {
+            area = square.getArea() * SQUARE_COEFFICIENT_TILE;
+
+        } else if (figure instanceof Circle) {
+
+            Circle circle = userInteraction.createCircleWithUserInput();
+            area = circle.getArea() * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
+
+        } else if (figure instanceof Triangle) {
+
             Triangle triangle = userInteraction.createTriangleWithUserInput();
-            paintingArea = super.calculateTriangleArea(triangle) * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
+            area = triangle.getArea()
+                    * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
         }
-        return paintingArea;
+        return area;
     }
 }

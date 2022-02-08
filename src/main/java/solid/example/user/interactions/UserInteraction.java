@@ -20,13 +20,13 @@ public class UserInteraction {
 
         Integer figureNumber = Integer.parseInt(myObj.nextLine());  // Read user input
         if (figureNumber == 1) {
-            figure = Figure.SQUARE;
+            figure = new Square();
         }
         if (figureNumber == 2) {
-            figure = Figure.CIRCLE;
+            figure = new Circle();
         }
         if (figureNumber == 3) {
-            figure = Figure.TRIANGLE;
+            figure = new Triangle();
         }
         return figure;
     }
@@ -41,7 +41,7 @@ public class UserInteraction {
         if (areaTypeNumber == 1) areaType = "simple";
         else if (areaTypeNumber == 2) areaType = "painting";
         else if (areaTypeNumber == 3) areaType = "tile";
-        System.out.println("Let's calculate " + areaType + " area of a " + figure);  // Output user input
+        System.out.println("Let's calculate " + areaType + " area of a " + figure.getClass().getSimpleName());  // Output user input
 
         return areaType;
     }
@@ -90,6 +90,6 @@ public class UserInteraction {
 
     public void printAreaInConsole(Figure figure, String areaType, Double area) {
 
-        System.out.println("The " + areaType + " area of the " + figure + " is " + area);
+        System.out.println("The " + areaType + " area of the " + figure.getClass().getSimpleName() + " is " + area);
     }
 }
