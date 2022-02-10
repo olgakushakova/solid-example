@@ -46,7 +46,7 @@ public class UserInteraction {
         System.out.println("Enter length of the square side: ");
         Double length = myObj.nextDouble();
 
-        square.setWidth(length);
+        square.setSideLength(length);
 
         return square;
     }

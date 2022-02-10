@@ -3,17 +3,12 @@ package solid.example.models;
 import lombok.Data;
 
 @Data
-public class Square extends Rectangle {
+public class Square extends Figure {
 
-//    @Override
-//    public void setHeight(Double height) {
-//        super.setHeight(height);
-//        super.setWidth(height);
-//    }
-//
-//    @Override
-//    public void setWidth(Double width) {
-//        super.setWidth(width);
-//        super.setHeight(width);
-//    }
+    private Double sideLength;
+
+    public Double getArea() {
+
+        return sideLength * sideLength;
+    }
 }
