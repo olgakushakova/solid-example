@@ -1,7 +1,7 @@
 package solid.example.calculations;
 
 import solid.example.models.*;
-import solid.example.user.interactions.UserInteraction;
+import solid.example.user.input.UserInteraction;
 
 
 public class CalculateSimpleArea implements CalculateArea {

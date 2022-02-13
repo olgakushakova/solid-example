@@ -5,15 +5,19 @@ import solid.example.calculations.CalculatePaintingArea;
 import solid.example.calculations.CalculateSimpleArea;
 import solid.example.calculations.CalculateTileArea;
 import solid.example.models.Figure;
-import solid.example.user.interactions.UserInteraction;
+import solid.example.output.ProcessResult;
+import solid.example.user.input.UserInteraction;
+
+import java.io.IOException;
 
 
 public class Main {
 
     private static UserInteraction userInteraction = new UserInteraction();
     private static CalculateArea calculateArea;
+    private static ProcessResult processResult = new ProcessResult();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Figure figure = userInteraction.readFigureFromInput();
 
@@ -29,6 +33,9 @@ public class Main {
 
         Double area = calculateArea.calculateArea(figure);
 
-        userInteraction.printAreaInConsole(figure, areaType, area);
+//        userInteraction.printAreaInConsole(figure, areaType, area);
+
+        processResult.printAreaInConsole(figure, areaType, area);
+        processResult.saveDataToFile(figure, areaType, area);
     }
 }

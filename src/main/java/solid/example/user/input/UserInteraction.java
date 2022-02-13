@@ -1,6 +1,5 @@
-package solid.example.user.interactions;
+package solid.example.user.input;
 
-import org.w3c.dom.css.Rect;
 import solid.example.models.*;
 
 import java.util.Scanner;
@@ -96,8 +95,4 @@ public class UserInteraction {
         return rectangle;
     }
 
-    public void printAreaInConsole(Figure figure, String areaType, Double area) {
-
-        System.out.println("The " + areaType + " area of the " + figure.getClass().getSimpleName() + " is " + area);
-    }
 }

@@ -1,9 +1,7 @@
 package solid.example.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+public abstract class Figure {
 
-@Data
-public class Figure {
+    public abstract Double getArea();
 
 }
