@@ -1,4 +1,4 @@
-package solid.example.user.input;
+package solid.example.input;
 
 import solid.example.models.*;
 
@@ -94,5 +94,4 @@ public class UserInteraction {
 
         return rectangle;
     }
-
 }

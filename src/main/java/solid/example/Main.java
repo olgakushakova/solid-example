@@ -5,12 +5,9 @@ import solid.example.calculations.CalculatePaintingArea;
 import solid.example.calculations.CalculateSimpleArea;
 import solid.example.calculations.CalculateTileArea;
 import solid.example.models.Figure;
-import solid.example.output.ProcessResult;
-import solid.example.output.SaveResultToCsvFile;
-import solid.example.output.SendResultToConsole;
-import solid.example.user.input.UserInteraction;
+import solid.example.output.StringConsoleAndCsvFileOutput;
+import solid.example.input.UserInteraction;
 
-import java.io.IOException;
 import java.util.List;
 
 
@@ -18,10 +15,9 @@ public class Main {
 
     private static UserInteraction userInteraction = new UserInteraction();
     private static CalculateArea calculateArea;
-    private static ProcessResult saveResultToFile = new SaveResultToCsvFile();
-    private static ProcessResult sendResultToConsole = new SendResultToConsole();
+    private static StringConsoleAndCsvFileOutput processResult = new StringConsoleAndCsvFileOutput();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         Figure figure = userInteraction.readFigureFromInput();
 
@@ -37,9 +33,9 @@ public class Main {
 
         Double area = calculateArea.calculateArea(figure);
 
-        List<String[]> list = saveResultToFile.prepareDataAsList(figure, areaType, area);
-        saveResultToFile.writePreparedListDataToOutput(list);
+        List<String[]> list = processResult.prepareDataAsList(figure, areaType, area);
+        processResult.writePreparedListDataToOutput(list);
 
-        sendResultToConsole.writePlainDataToOutput(figure, areaType, area);
+        processResult.writePlainDataToConsole(figure, areaType, area);
     }
 }

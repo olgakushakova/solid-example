@@ -5,14 +5,25 @@ import solid.example.models.Figure;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class SaveResultToCsvFile implements ProcessResult {
+public class StringConsoleAndCsvFileOutput implements ConsoleOutput, CsvFileOutput {
 
     private List<String[]> dataLines = new ArrayList<>();
 
+    @Override
+    public void writePlainDataToConsole(Figure figure, String areaType, Double area) {
+
+        System.out.println("The " + areaType + " area of the " + figure.getClass().getSimpleName() +
+                " is " + BigDecimal.valueOf(area).setScale(3, RoundingMode.HALF_UP));
+    }
 
     @Override
     public List<String[]> prepareDataAsList(Figure figure, String areaType, Double area) {
@@ -23,14 +34,7 @@ public class SaveResultToCsvFile implements ProcessResult {
     }
 
     @Override
-    public Map<String, Object> prepareDataAsMap(Figure figure, String areaType, Double area) {
-        // Not needed here
-        return null;
-    }
-
-    @Override
     public void writePreparedListDataToOutput(List<String[]> preparedListData) {
-
         File csvOutputFile = new File("C:\\Users\\o_kus\\Documents\\solid-example\\new_file-"
                 + Arrays.stream(preparedListData.get(1)).findFirst().get() + new Random().nextInt() + ".csv");
 
@@ -41,16 +45,6 @@ public class SaveResultToCsvFile implements ProcessResult {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void writePreparedMapDataToOutput(Map<String, Object> preparedMapData) {
-        // Not needed here
-    }
-
-    @Override
-    public void writePlainDataToOutput(Figure figure, String areaType, Double area) {
-        // Not needed here
     }
 
     String convertLineToCSV(String[] dataLines) {
