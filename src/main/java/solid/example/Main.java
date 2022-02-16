@@ -6,16 +6,20 @@ import solid.example.calculations.CalculateSimpleArea;
 import solid.example.calculations.CalculateTileArea;
 import solid.example.models.Figure;
 import solid.example.output.ProcessResult;
+import solid.example.output.SaveResultToCsvFile;
+import solid.example.output.SendResultToConsole;
 import solid.example.user.input.UserInteraction;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class Main {
 
     private static UserInteraction userInteraction = new UserInteraction();
     private static CalculateArea calculateArea;
-    private static ProcessResult processResult = new ProcessResult();
+    private static ProcessResult saveResultToFile = new SaveResultToCsvFile();
+    private static ProcessResult sendResultToConsole = new SendResultToConsole();
 
     public static void main(String[] args) throws IOException {
 
@@ -33,9 +37,9 @@ public class Main {
 
         Double area = calculateArea.calculateArea(figure);
 
-//        userInteraction.printAreaInConsole(figure, areaType, area);
+        List<String[]> list = saveResultToFile.prepareDataAsList(figure, areaType, area);
+        saveResultToFile.writePreparedListDataToOutput(list);
 
-        processResult.printAreaInConsole(figure, areaType, area);
-        processResult.saveDataToFile(figure, areaType, area);
+        sendResultToConsole.writePlainDataToOutput(figure, areaType, area);
     }
 }
