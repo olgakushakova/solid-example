@@ -4,36 +4,56 @@ import solid.example.models.*;
 
 import java.util.Scanner;
 
-public class UserInteraction {
+public class CreateInputFromUserInteraction implements CreateInput {
 
-    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+    Scanner figureInputObject = new Scanner(System.in);
 
-    public Figure readFigureFromInput() {
+    @Override
+    public Figure getInputFigure() {
 
         Figure figure = null;
 
         System.out.println("Enter figure type from the list. Enter the number and press Enter: " +
                 "\n 1 - Square \n 2 - Circle \n 3 - Triangle \n 4 - Rectangle");
 
-        Integer figureNumber = Integer.parseInt(myObj.nextLine());  // Read user input
-        if (figureNumber == 1) figure = new Square();
-        else if (figureNumber == 2) figure = new Circle();
-        else if (figureNumber == 3) figure = new Triangle();
-        else if (figureNumber == 4) figure = new Rectangle();
+        Integer figureNumber = Integer.parseInt(figureInputObject.nextLine());
+        if (figureNumber == 1) {
+            figure = createSquareWithUserInput();
+        }
+        else if (figureNumber == 2) {
+            figure = createCircleWithUserInput();
+        }
+        else if (figureNumber == 3) {
+            figure = createTriangleWithUserInput();
+        }
+        else if (figureNumber == 4) {
+            figure = createRectangleWithUserInput();
+        }
         return figure;
     }
 
-    public String readAreaTypeFromInput(Figure figure) {
+    @Override
+    public String getInputAreaType() {
+
+        Scanner areaTypeInputObject = new Scanner(System.in);
+
+
         String areaType = null;
 
         System.out.println("What kind of calculations do you need: " +
                 "\n 1 - Simple \n 2 - Painting \n 3 - Tile");
 
-        Integer areaTypeNumber = Integer.parseInt(myObj.nextLine());
-        if (areaTypeNumber == 1) areaType = "simple";
-        else if (areaTypeNumber == 2) areaType = "painting";
-        else if (areaTypeNumber == 3) areaType = "tile";
-        System.out.println("Let's calculate " + areaType + " area of a " + figure.getClass().getSimpleName());  // Output user input
+        Integer areaTypeNumber = Integer.parseInt(areaTypeInputObject.nextLine());
+        if (areaTypeNumber == 1) {
+            areaType = "simple";
+        }
+        else if (areaTypeNumber == 2) {
+            areaType = "painting";
+        }
+        else if (areaTypeNumber == 3) {
+            areaType = "tile";
+        }
+        System.out.println("Let's calculate " + areaType + " area of a selected figure");
 
         return areaType;
     }
@@ -43,7 +63,7 @@ public class UserInteraction {
         Square square = new Square();
 
         System.out.println("Enter length of the square side: ");
-        Double length = myObj.nextDouble();
+        Double length = figureInputObject.nextDouble();
 
         square.setSideLength(length);
 
@@ -55,7 +75,7 @@ public class UserInteraction {
         Circle circle = new Circle();
 
         System.out.println("Enter radius of the circle: ");
-        Double radius = myObj.nextDouble();
+        Double radius = figureInputObject.nextDouble();
 
         circle.setRadius(radius);
 
@@ -67,11 +87,11 @@ public class UserInteraction {
         Triangle triangle = new Triangle();
 
         System.out.println("Enter the length of the one triangle side: ");
-        Double firstSideLength = myObj.nextDouble();
+        Double firstSideLength = figureInputObject.nextDouble();
         System.out.println("Enter the length of the other triangle side: ");
-        Double secondSideLength = myObj.nextDouble();
+        Double secondSideLength = figureInputObject.nextDouble();
         System.out.println("Enter the included angle: ");
-        Double angle = myObj.nextDouble();
+        Double angle = figureInputObject.nextDouble();
 
         triangle.setFirstSideLength(firstSideLength);
         triangle.setSecondSideLength(secondSideLength);
@@ -85,9 +105,9 @@ public class UserInteraction {
         Rectangle rectangle = new Rectangle();
 
         System.out.println("Enter the rectangle width: ");
-        Double width = myObj.nextDouble();
+        Double width = figureInputObject.nextDouble();
         System.out.println("Enter the rectangle height: ");
-        Double height = myObj.nextDouble();
+        Double height = figureInputObject.nextDouble();
 
         rectangle.setWidth(width);
         rectangle.setHeight(height);

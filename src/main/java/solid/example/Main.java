@@ -4,24 +4,25 @@ import solid.example.calculations.CalculateArea;
 import solid.example.calculations.CalculatePaintingArea;
 import solid.example.calculations.CalculateSimpleArea;
 import solid.example.calculations.CalculateTileArea;
+import solid.example.input.CreateInput;
 import solid.example.models.Figure;
 import solid.example.output.StringConsoleAndCsvFileOutput;
-import solid.example.input.UserInteraction;
+import solid.example.input.CreateInputFromUserInteraction;
 
 import java.util.List;
 
 
 public class Main {
 
-    private static UserInteraction userInteraction = new UserInteraction();
+    private static CreateInput userInteractionInput = new CreateInputFromUserInteraction();
     private static CalculateArea calculateArea;
     private static StringConsoleAndCsvFileOutput processResult = new StringConsoleAndCsvFileOutput();
 
     public static void main(String[] args) {
 
-        Figure figure = userInteraction.readFigureFromInput();
+        Figure figure = userInteractionInput.getInputFigure();
 
-        String areaType = userInteraction.readAreaTypeFromInput(figure);
+        String areaType = userInteractionInput.getInputAreaType();
 
         if (areaType == "simple") {
             calculateArea = new CalculateSimpleArea();
