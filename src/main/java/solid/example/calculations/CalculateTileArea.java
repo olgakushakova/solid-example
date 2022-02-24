@@ -3,7 +3,7 @@ package solid.example.calculations;
 import solid.example.models.*;
 
 
-public class CalculateTileArea extends CalculateSimpleArea {
+public class CalculateTileArea implements CalculateArea {
 
     private static final Double TILE_COEFFICIENT = 1.4;
 

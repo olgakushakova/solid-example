@@ -20,10 +20,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // Define input parameters - create figure and set properties for the figure from user input
         Figure figure = userInteractionInput.getInputFigure();
 
         String areaType = userInteractionInput.getInputAreaType();
 
+        // Calculate area of the figure - check area type and calculate area in accordance
         if (areaType == "simple") {
             calculateArea = new CalculateSimpleArea();
         } else if (areaType == "painting") {
@@ -31,12 +33,11 @@ public class Main {
         } else if (areaType == "tile") {
             calculateArea = new CalculateTileArea();
         }
-
         Double area = calculateArea.calculateArea(figure);
 
+        // Process results of calculations - write to file and to console
         List<String[]> list = processResult.prepareDataAsList(figure, areaType, area);
         processResult.writePreparedListDataToOutput(list);
-
         processResult.writePlainDataToConsole(figure, areaType, area);
     }
 }
