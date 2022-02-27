@@ -2,7 +2,7 @@ package solid.example.input;
 
 import java.util.Scanner;
 
-public class AreaType {
+public class AreaTypeFromUserInput {
 
     public String defineAreaType() {
 

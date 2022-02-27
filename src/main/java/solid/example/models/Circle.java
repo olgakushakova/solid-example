@@ -13,18 +13,4 @@ public class Circle implements Figure {
 
         return Math.PI * radius * radius;
     }
-
-    public Circle createFigureFromUserInput() {
-
-        Scanner inputObj = new Scanner(System.in);
-
-        Circle circle = new Circle();
-
-        System.out.println("Enter radius of the circle: ");
-        Double radius = inputObj.nextDouble();
-
-        circle.setRadius(radius);
-
-        return circle;
-    }
 }

@@ -9,15 +9,14 @@ public class CreateInputFromUserInteraction implements CreateInput {
     @Override
     public Figure getInputFigure() {
 
-        InputFigure inputFigure = new InputFigure();
+        InputFigureFromUserInput inputFigure = new InputFigureFromUserInput();
         return inputFigure.createFigure();
-
     }
 
     @Override
     public String getInputAreaType() {
 
-        AreaType areaType = new AreaType();
+        AreaTypeFromUserInput areaType = new AreaTypeFromUserInput();
         return areaType.defineAreaType();
     }
 }
