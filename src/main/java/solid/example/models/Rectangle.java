@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Scanner;
 
 @Data
-public class Rectangle extends Figure {
+public class Rectangle implements Figure {
 
     private Double width;
     private Double height;

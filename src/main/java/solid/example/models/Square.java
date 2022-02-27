@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Scanner;
 
 @Data
-public class Square extends Figure {
+public class Square implements Figure {
 
     private Double sideLength;
 

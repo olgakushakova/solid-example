@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Scanner;
 
 @Data
-public class Circle extends Figure {
+public class Circle implements Figure {
 
     private Double radius;
 

@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Scanner;
 
 @Data
-public class Triangle extends Figure {
+public class Triangle implements Figure {
 
     private Double firstSideLength;
     private Double secondSideLength;

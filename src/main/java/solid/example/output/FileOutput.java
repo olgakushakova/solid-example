@@ -2,7 +2,6 @@ package solid.example.output;
 
 import solid.example.models.Figure;
 
-import java.io.File;
 import java.util.List;
 
 public interface FileOutput {
