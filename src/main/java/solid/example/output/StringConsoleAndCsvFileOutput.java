@@ -14,7 +14,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StringConsoleAndCsvFileOutput implements ConsoleOutput, CsvFileOutput {
+public class StringConsoleAndCsvFileOutput implements ConsoleOutput, FileOutput {
 
     private List<String[]> dataLines = new ArrayList<>();
 
