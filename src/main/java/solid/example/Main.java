@@ -14,26 +14,29 @@ import java.util.List;
 
 public class Main {
 
-    private static CreateInput userInteractionInput = new CreateInputFromUserInteraction();
-    private static CalculateArea calculateArea;
     private static StringConsoleAndCsvFileOutput processResult = new StringConsoleAndCsvFileOutput();
+    private static Figure figure;
+    private static String areaType;
+    private static Double area;
 
     public static void main(String[] args) {
 
         // Define input parameters - create figure and set properties for the figure from user input
-        Figure figure = userInteractionInput.getInputFigure();
-
-        String areaType = userInteractionInput.getInputAreaType();
+        CreateInput userInteractionInput = new CreateInputFromUserInteraction();
+        figure = userInteractionInput.getInputFigure();
+        areaType = userInteractionInput.getInputAreaType();
 
         // Calculate area of the figure - check area type and calculate area in accordance
         if (areaType == "simple") {
-            calculateArea = new CalculateSimpleArea();
+            CalculateSimpleArea calculateSimpleArea = new CalculateSimpleArea();
+            area = calculateSimpleArea.calculateArea(figure);
         } else if (areaType == "painting") {
-            calculateArea = new CalculatePaintingArea();
+            CalculatePaintingArea calculatePaintingArea = new CalculatePaintingArea();
+            area = calculatePaintingArea.calculateArea(figure);
         } else if (areaType == "tile") {
-            calculateArea = new CalculateTileArea();
+            CalculateTileArea calculateTileArea = new CalculateTileArea();
+            area = calculateTileArea.calculateArea(figure);
         }
-        Double area = calculateArea.calculateArea(figure);
 
         // Process results of calculations - write to file and to console
         List<String[]> list = processResult.prepareDataAsList(figure, areaType, area);

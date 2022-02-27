@@ -10,6 +10,11 @@ import java.util.Map;
 public class PostgreSqlResultOutput implements DbOutput {
 
     @Override
+    public void createConnection() {
+
+    }
+
+    @Override
     public Map<String, Object> prepareDataAsMap(Figure figure, String areaType, Double area) {
 
         Map<String, Object> map = new HashMap<>();
@@ -27,6 +32,6 @@ public class PostgreSqlResultOutput implements DbOutput {
 
     @Override
     public void writePreparedListDataToOutput(List<String[]> preparedListData) {
-        // Not needed here
+        // Some implementation
     }
 }
