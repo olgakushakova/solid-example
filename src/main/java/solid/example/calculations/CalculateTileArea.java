@@ -8,8 +8,7 @@ import solid.example.models.Triangle;
 
 public class CalculateTileArea extends CalculateArea {
 
-    private static final Double CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE = 1.2;
-    private static final Double SQUARE_COEFFICIENT_TILE = 1.1;
+    private static final Double TILE_COEFFICIENT = 1.2;
 
     private static UserInteraction userInteraction = new UserInteraction();
 
@@ -19,13 +18,13 @@ public class CalculateTileArea extends CalculateArea {
 
         if (figure == Figure.CIRCLE) {
             Circle circle = userInteraction.createCircleWithUserInput();
-            paintingArea = super.calculateCircleArea(circle) * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
+            paintingArea = calculateCircleArea(circle) * TILE_COEFFICIENT;
         } else if (figure == Figure.SQUARE) {
             Square square = userInteraction.createSquareWithUserInput();
-            paintingArea = super.calculateSquareArea(square) * SQUARE_COEFFICIENT_TILE;
+            paintingArea = calculateSquareArea(square) * TILE_COEFFICIENT;
         } else if (figure == Figure.TRIANGLE) {
             Triangle triangle = userInteraction.createTriangleWithUserInput();
-            paintingArea = super.calculateTriangleArea(triangle) * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
+            paintingArea = calculateTriangleArea(triangle) * TILE_COEFFICIENT;
         }
         return paintingArea;
     }
