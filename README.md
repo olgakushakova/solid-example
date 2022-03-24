@@ -1,6 +1,6 @@
-Previous step: ISP-1 https://github.com/olgakushakova/solid-example/tree/ISP-1
+Previous step: ISP-2 https://github.com/olgakushakova/solid-example/tree/ISP-2
 
-**SOLID principle to demonstrate: ISP**
+**SOLID principle to demonstrate: DIP**
 
 Changes from the previous step:
-- One big `ProcessResult` interface was splitted to three specific interfaces
+- Classes depend on particular figures instead of using `getArea()` for `Figure` itself 
