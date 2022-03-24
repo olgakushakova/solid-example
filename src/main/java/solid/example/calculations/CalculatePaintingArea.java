@@ -8,8 +8,7 @@ import solid.example.models.Triangle;
 
 public class CalculatePaintingArea {
 
-    private static final Double CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING = 1.1;
-    private static final Double SQUARE_COEFFICIENT_PAINTING = 1.05;
+    private static final Double PAINTING_COEFFICIENT = 1.1;
 
     private static UserInteraction userInteraction = new UserInteraction();
 
@@ -33,16 +32,16 @@ public class CalculatePaintingArea {
 
     public double calculateSquarePaintingArea(Square square) {
 
-        return square.getSideLength() * square.getSideLength() * SQUARE_COEFFICIENT_PAINTING;
+        return square.getSideLength() * square.getSideLength() * PAINTING_COEFFICIENT;
     }
 
     public double calculateCirclePaintingArea(Circle circle) {
 
-        return Math.PI * circle.getRadius() * circle.getRadius() * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
+        return Math.PI * circle.getRadius() * circle.getRadius() * PAINTING_COEFFICIENT;
     }
 
     public double calculateTrianglePaintingArea(Triangle triangle) {
 
-        return triangle.getBaseLength() * triangle.getHeight() / 2 * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
+        return triangle.getBaseLength() * triangle.getHeight() / 2 * PAINTING_COEFFICIENT;
     }
 }

@@ -8,8 +8,7 @@ import solid.example.models.Triangle;
 
 public class CalculateTileArea {
 
-    private static final Double CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE = 1.2;
-    private static final Double SQUARE_COEFFICIENT_TILE = 1.1;
+    private static final Double TILE_COEFFICIENT = 1.2;
 
     private static UserInteraction userInteraction = new UserInteraction();
 
@@ -33,17 +32,17 @@ public class CalculateTileArea {
 
     public Double calculateSquareTileArea(Square square) {
 
-        return square.getSideLength() * square.getSideLength() * SQUARE_COEFFICIENT_TILE;
+        return square.getSideLength() * square.getSideLength() * TILE_COEFFICIENT;
 
     }
 
     public double calculateCircleTileArea(Circle circle) {
 
-        return Math.PI * circle.getRadius() * circle.getRadius() * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
+        return Math.PI * circle.getRadius() * circle.getRadius() * TILE_COEFFICIENT;
     }
 
     public double calculateTriangleTileArea(Triangle triangle) {
 
-        return triangle.getBaseLength() * triangle.getHeight() / 2 * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
+        return triangle.getBaseLength() * triangle.getHeight() / 2 * TILE_COEFFICIENT;
     }
 }
