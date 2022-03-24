@@ -2,7 +2,6 @@ package solid.example.models;
 
 import lombok.Data;
 
-import java.util.Scanner;
 
 @Data
 public class Triangle implements Figure {
