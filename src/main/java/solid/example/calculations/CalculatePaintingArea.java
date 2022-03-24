@@ -5,8 +5,7 @@ import solid.example.input.UserInteraction;
 
 public class CalculatePaintingArea implements CalculateArea {
 
-    private static final Double CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING = 1.1;
-    private static final Double SQUARE_AND_RECTANGLE_COEFFICIENT_PAINTING = 1.05;
+    private static final Double PAINTING_COEFFICIENT = 1.1;
 
     private static UserInteraction userInteraction = new UserInteraction();
 
@@ -19,22 +18,22 @@ public class CalculatePaintingArea implements CalculateArea {
         if (figure instanceof Square) {
 
             Square square = userInteraction.createSquareWithUserInput();
-            area = square.getArea() * SQUARE_AND_RECTANGLE_COEFFICIENT_PAINTING;
+            area = square.getArea() * PAINTING_COEFFICIENT;
 
         } else if (figure instanceof Circle) {
 
             Circle circle = userInteraction.createCircleWithUserInput();
-            area = circle.getArea() * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
+            area = circle.getArea() * PAINTING_COEFFICIENT;
 
         } else if (figure instanceof Triangle) {
 
             Triangle triangle = userInteraction.createTriangleWithUserInput();
-            area = triangle.getArea()
-                    * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
+            area = triangle.getArea() * PAINTING_COEFFICIENT;
+
         } else if (figure instanceof Rectangle) {
 
             Rectangle rectangle = userInteraction.createRectangleWithUserInput();
-            area = rectangle.getArea() * SQUARE_AND_RECTANGLE_COEFFICIENT_PAINTING;
+            area = rectangle.getArea() * PAINTING_COEFFICIENT;
         }
         return area;
     }
