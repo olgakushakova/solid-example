@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class CalculateTileArea {
 
-    private static final Double CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE = 1.2;
-    private static final Double SQUARE_COEFFICIENT_TILE = 1.1;
+    private static final Double TILE_COEFFICIENT = 1.2;
 
     public Double calculateTileArea(Figure figure) {
 
@@ -32,7 +31,7 @@ public class CalculateTileArea {
         System.out.println("Enter length of the square side: ");
         Double length = sn.nextDouble();
 
-        squareArea = length * length * SQUARE_COEFFICIENT_TILE;
+        squareArea = length * length * TILE_COEFFICIENT;
 
         return squareArea;
     }
@@ -45,7 +44,7 @@ public class CalculateTileArea {
         System.out.println("Enter radius of the circle: ");
         Double radius = sn.nextDouble();
 
-        circleArea = Math.PI * radius * radius * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
+        circleArea = Math.PI * radius * radius * TILE_COEFFICIENT;
 
         return circleArea;
     }
@@ -60,7 +59,7 @@ public class CalculateTileArea {
         System.out.println("Enter the length of the triangle height: ");
         Double height = sn.nextDouble();
 
-        triangleArea = length * height / 2 * CIRCLE_AND_TRIANGLE_COEFFICIENT_TILE;
+        triangleArea = length * height / 2 * TILE_COEFFICIENT;
 
         return triangleArea;
     }

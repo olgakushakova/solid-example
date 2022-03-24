@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class CalculatePaintingArea {
 
-    private static final Double CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING = 1.1;
-    private static final Double SQUARE_COEFFICIENT_PAINTING = 1.05;
+    private static final Double PAINTING_COEFFICIENT = 1.1;
 
     public Double calculatePaintingArea(Figure figure) {
 
@@ -32,7 +31,7 @@ public class CalculatePaintingArea {
         System.out.println("Enter length of the square side: ");
         Double length = sn.nextDouble();
 
-        squareArea = length * length * SQUARE_COEFFICIENT_PAINTING;
+        squareArea = length * length * PAINTING_COEFFICIENT;
 
         return squareArea;
     }
@@ -45,7 +44,7 @@ public class CalculatePaintingArea {
         System.out.println("Enter radius of the circle: ");
         Double radius = sn.nextDouble();
 
-        circleArea = Math.PI * radius * radius * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
+        circleArea = Math.PI * radius * radius * PAINTING_COEFFICIENT;
 
         return circleArea;
     }
@@ -60,7 +59,7 @@ public class CalculatePaintingArea {
         System.out.println("Enter the length of the triangle height: ");
         Double height = sn.nextDouble();
 
-        triangleArea = length * height / 2 * CIRCLE_AND_TRIANGLE_COEFFICIENT_PAINTING;
+        triangleArea = length * height / 2 * PAINTING_COEFFICIENT;
 
         return triangleArea;
     }
