@@ -1,13 +1,10 @@
 package solid.example;
 
-import org.w3c.dom.css.Rect;
-import solid.example.calculations.CalculateArea;
 import solid.example.calculations.CalculatePaintingArea;
 import solid.example.calculations.CalculateSimpleArea;
 import solid.example.calculations.CalculateTileArea;
 import solid.example.input.CreateInput;
 import solid.example.models.Figure;
-import solid.example.models.Rectangle;
 import solid.example.output.StringConsoleAndCsvFileOutput;
 import solid.example.input.CreateInputFromUserInteraction;
 
