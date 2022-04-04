@@ -4,7 +4,7 @@ import lombok.Data;
 
 
 @Data
-public class Triangle implements Figure {
+public class Triangle extends Figure {
 
     private Double firstSideLength;
     private Double secondSideLength;

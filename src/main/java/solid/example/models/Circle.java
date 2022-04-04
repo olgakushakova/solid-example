@@ -4,7 +4,7 @@ import lombok.Data;
 
 
 @Data
-public class Circle implements Figure {
+public class Circle extends Figure {
 
     private Double radius;
 

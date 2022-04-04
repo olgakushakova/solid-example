@@ -4,7 +4,7 @@ import lombok.Data;
 
 
 @Data
-public class Square implements Figure {
+public class Square extends Figure {
 
     private Double sideLength;
 

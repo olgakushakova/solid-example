@@ -4,7 +4,7 @@ import lombok.Data;
 
 
 @Data
-public class Rectangle implements Figure {
+public class Rectangle extends Figure {
 
     private Double width;
     private Double height;

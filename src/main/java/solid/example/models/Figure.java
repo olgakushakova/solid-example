@@ -1,6 +1,6 @@
 package solid.example.models;
 
-public interface Figure {
+public abstract class Figure {
 
-    Double getArea();
+    public abstract Double getArea();
 }
