@@ -34,7 +34,7 @@ public class Main {
         Double area = calculateArea.calculateArea(figure);
 
         List<String[]> list = processResult.prepareDataAsList(figure, areaType, area);
-        processResult.writePreparedListDataToOutput(list);
+        processResult.writePreparedListDataToFile(list);
 
         processResult.writePlainDataToConsole(figure, areaType, area);
     }
