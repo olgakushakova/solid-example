@@ -20,7 +20,7 @@ public class UserInteraction {
         if (figureNumber == 1) figure = new Square();
         else if (figureNumber == 2) figure = new Circle();
         else if (figureNumber == 3) figure = new Triangle();
-        else if (figureNumber == 4) figure = new Rectangle();
+        else if (figureNumber == 4) figure = new Square();
         return figure;
     }
 
