@@ -22,17 +22,17 @@ public class SendResultToConsole implements ProcessResult {
     }
 
     @Override
-    public void writePreparedListDataToOutput(List<String[]> preparedListData) {
+    public void writePreparedListDataToFile(List<String[]> preparedListData) {
         // Not needed here
     }
 
     @Override
-    public void writePreparedMapDataToOutput(Map<String, Object> preparedMapData) {
+    public void writePreparedMapDataToDb(Map<String, Object> preparedMapData) {
         // Not needed here
     }
 
     @Override
-    public void writePlainDataToOutput(Figure figure, String areaType, Double area) {
+    public void writePlainDataToConsole(Figure figure, String areaType, Double area) {
 
         System.out.println("The " + areaType + " area of the " + figure.getClass().getSimpleName() +
                 " is " + BigDecimal.valueOf(area).setScale(3, RoundingMode.HALF_UP));

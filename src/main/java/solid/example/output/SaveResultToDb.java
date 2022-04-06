@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class SaveResultToPostgreSql implements ProcessResult {
+public class SaveResultToDb implements ProcessResult {
 
     @Override
     public List<String[]> prepareDataAsList(Figure figure, String areaType, Double area) {
@@ -32,17 +32,17 @@ public class SaveResultToPostgreSql implements ProcessResult {
     }
 
     @Override
-    public void writePreparedListDataToOutput(List<String[]> preparedListData) {
+    public void writePreparedListDataToFile(List<String[]> preparedListData) {
         // Not needed here
     }
 
     @Override
-    public void writePreparedMapDataToOutput(Map<String, Object> preparedMapData) {
-        // Create connection to PostgreSql -> Create table if not exists -> Insert results from map
+    public void writePreparedMapDataToDb(Map<String, Object> preparedMapData) {
+        // Create connection to Db -> Create table if not exists -> Insert results from map
     }
 
     @Override
-    public void writePlainDataToOutput(Figure figure, String areaType, Double area) {
+    public void writePlainDataToConsole(Figure figure, String areaType, Double area) {
         // Not needed here
     }
 }

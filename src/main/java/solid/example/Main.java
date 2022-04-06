@@ -38,8 +38,8 @@ public class Main {
         Double area = calculateArea.calculateArea(figure);
 
         List<String[]> list = saveResultToFile.prepareDataAsList(figure, areaType, area);
-        saveResultToFile.writePreparedListDataToOutput(list);
+        saveResultToFile.writePreparedListDataToFile(list);
 
-        sendResultToConsole.writePlainDataToOutput(figure, areaType, area);
+        sendResultToConsole.writePlainDataToConsole(figure, areaType, area);
     }
 }

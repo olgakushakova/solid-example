@@ -11,9 +11,9 @@ public interface ProcessResult {
 
     Map<String, Object> prepareDataAsMap(Figure figure, String areaType, Double area);
 
-    void writePreparedListDataToOutput(List<String[]> preparedListData);
+    void writePreparedListDataToFile(List<String[]> preparedListData);
 
-    void writePreparedMapDataToOutput(Map<String, Object> preparedMapData);
+    void writePreparedMapDataToDb(Map<String, Object> preparedMapData);
 
-    void writePlainDataToOutput(Figure figure, String areaType, Double area);
+    void writePlainDataToConsole(Figure figure, String areaType, Double area);
 }

@@ -29,7 +29,7 @@ public class SaveResultToCsvFile implements ProcessResult {
     }
 
     @Override
-    public void writePreparedListDataToOutput(List<String[]> preparedListData) {
+    public void writePreparedListDataToFile(List<String[]> preparedListData) {
 
         File csvOutputFile = new File("C:\\Users\\o_kus\\Documents\\solid-example\\new_file-"
                 + Arrays.stream(preparedListData.get(1)).findFirst().get() + new Random().nextInt() + ".csv");
@@ -44,12 +44,12 @@ public class SaveResultToCsvFile implements ProcessResult {
     }
 
     @Override
-    public void writePreparedMapDataToOutput(Map<String, Object> preparedMapData) {
+    public void writePreparedMapDataToDb(Map<String, Object> preparedMapData) {
         // Not needed here
     }
 
     @Override
-    public void writePlainDataToOutput(Figure figure, String areaType, Double area) {
+    public void writePlainDataToConsole(Figure figure, String areaType, Double area) {
         // Not needed here
     }
 
