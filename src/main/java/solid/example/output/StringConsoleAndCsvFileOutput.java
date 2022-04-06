@@ -14,7 +14,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StringConsoleAndCsvFileOutput implements ConsoleOutput, CsvFileOutput {
+public class StringConsoleAndCsvFileOutput implements ConsoleOutput, FileOutput {
 
     private List<String[]> dataLines = new ArrayList<>();
 
@@ -34,7 +34,7 @@ public class StringConsoleAndCsvFileOutput implements ConsoleOutput, CsvFileOutp
     }
 
     @Override
-    public void writePreparedListDataToOutput(List<String[]> preparedListData) {
+    public void writePreparedListDataToFile(List<String[]> preparedListData) {
         File csvOutputFile = new File("C:\\Users\\o_kus\\Documents\\solid-example\\new_file-"
                 + Arrays.stream(preparedListData.get(1)).findFirst().get() + new Random().nextInt() + ".csv");
 

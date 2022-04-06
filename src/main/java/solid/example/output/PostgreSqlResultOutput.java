@@ -26,7 +26,7 @@ public class PostgreSqlResultOutput implements DbOutput {
     }
 
     @Override
-    public void writePreparedListDataToOutput(List<String[]> preparedListData) {
-        // Not needed here
+    public void writePreparedMapDataToDb(List<String[]> preparedListData) {
+        //Some implementation
     }
 }
