@@ -39,7 +39,7 @@ public class Main {
 
         // Process results of calculations - write to file and to console
         List<String[]> list = processResult.prepareDataAsList(figure, areaType, area);
-        processResult.writePreparedListDataToOutput(list);
+        processResult.writePreparedListDataToFile(list);
         processResult.writePlainDataToConsole(figure, areaType, area);
     }
 }

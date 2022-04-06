@@ -7,9 +7,7 @@ import java.util.Map;
 
 public interface DbOutput {
 
-    void createConnection();
-
     Map<String, Object> prepareDataAsMap(Figure figure, String areaType, Double area);
 
-    void writePreparedListDataToOutput(List<String[]> preparedListData);
+    void writePreparedMapDataToDb(List<String[]> preparedListData);
 }
