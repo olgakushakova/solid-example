@@ -20,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Define input parameters - create figure and set properties for the figure from user input
+        // Create figure and define area type from user input
         CreateInput userInteractionInput = new CreateInputFromUserInteraction();
         figure = userInteractionInput.getInputFigure();
         areaType = userInteractionInput.getInputAreaType();
